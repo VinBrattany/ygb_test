@@ -18,7 +18,7 @@ module.exports = {
   // sub-path here. For example, if your app is deployed at
   // https://www.foobar.com/my-app/
   // then change this to '/my-app/'
-  baseUrl: '/yzjfarmerapp/',
+  baseUrl: '/ygb/',
 
   // where to output built files
   outputDir: 'dist',
@@ -86,7 +86,7 @@ module.exports = {
     open: process.platform === 'darwin',
     disableHostCheck: false,
     host: '0.0.0.0',
-    port: 30023,
+    port: 30024,
     https: false,
     hotOnly: false,
     // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#configuring-proxy
