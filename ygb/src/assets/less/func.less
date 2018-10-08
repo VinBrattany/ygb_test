@@ -1,0 +1,23 @@
+@charset "utf-8";  
+.px2rem(@name, @px) {
+  @{name}: @px / 50 * 1rem;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.auto-width {
+  width: auto;
+  min-width: initial!important;
+}
+.pb-16 {
+  .px2rem(padding-bottom, 16);
+}
+.pr-16 {
+  .px2rem(padding-right, 16);
+}
+.pt-16 {
+  .px2rem(padding-top, 16);
+}

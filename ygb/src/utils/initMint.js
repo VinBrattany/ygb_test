@@ -15,7 +15,13 @@ import {
   Switch,
   Picker,
   Checklist,
-  Radio
+  Radio,
+  Tabbar,
+  TabItem,
+  TabContainer,
+  TabContainerItem,
+  Swipe,
+  SwipeItem
 } from 'mint-ui'
 
 const initMint = Vue => {
@@ -31,6 +37,12 @@ const initMint = Vue => {
   Vue.component(Picker.name, Picker)
   Vue.component(Checklist.name, Checklist)
   Vue.component(Radio.name, Radio)
+  Vue.component(Tabbar.name, Tabbar)
+  Vue.component(TabItem.name, TabItem)
+  Vue.component(TabContainer.name, TabContainer)
+  Vue.component(TabContainerItem.name, TabContainerItem)
+  Vue.component(Swipe.name, Swipe)
+  Vue.component(SwipeItem.name, SwipeItem)
 }
 
 export default initMint
