@@ -21,7 +21,8 @@ import {
   TabContainer,
   TabContainerItem,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  Loadmore
 } from 'mint-ui'
 
 const initMint = Vue => {
@@ -43,6 +44,7 @@ const initMint = Vue => {
   Vue.component(TabContainerItem.name, TabContainerItem)
   Vue.component(Swipe.name, Swipe)
   Vue.component(SwipeItem.name, SwipeItem)
+  Vue.component(Loadmore.name, Loadmore)
 }
 
 export default initMint

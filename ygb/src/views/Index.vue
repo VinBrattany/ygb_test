@@ -58,22 +58,22 @@ export default {
         {
           name: '巡查录入',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '专家库',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '养户查询',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '资料下载',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '数据上传',
@@ -83,37 +83,37 @@ export default {
         {
           name: '领料审核',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '签到',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '处方审核',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '巡查计划',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '采样管理',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         },
         {
           name: '服务申请',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: '/serviceapplication'
         },
         {
           name: '巡查图片',
           imgSrc: require('@/assets/img/home/hsss.png'),
-          path: '/abc'
+          path: ''
         }
       ]
     }
@@ -137,7 +137,7 @@ export default {
   .page-wrap {
     overflow: auto;
     height: 100%;
-    .px2rem(padding-bottom, 200);
+    .px2rem(padding-bottom, 60);
   }
 }
 </style>
