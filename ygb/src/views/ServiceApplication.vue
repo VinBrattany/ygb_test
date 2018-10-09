@@ -16,7 +16,21 @@ export default {
           datetime: '2018-09-11',
           rearer: 'abc',
           problemDesc: 'aaa',
-          problemType: 'ds'
+          problemType: 'ds',
+          imgList: [
+            {
+              src: require('@/assets/IMG_0625.png'),
+              name: 'enen'
+            },
+            {
+              src: require('@/assets/IMG_0638.jpg'),
+              name: 'emem'
+            },
+            {
+              src: require('@/assets/IMG_0001.png'),
+              name: 'eeee'
+            }
+          ]
         },
         {
           datetime: '2018-09-11',
@@ -53,14 +67,14 @@ export default {
           rearer: 'abc',
           problemDesc: 'aaa',
           problemType: 'ds'
-        },
+        }
       ]
     }
   },
   methods: {
-    loadTop() {
-      console.log("loadmore");
-      this.$refs.loadmore.onTopLoaded();
+    loadTop () {
+      console.log('loadmore')
+      this.$refs.loadmore.onTopLoaded()
     }
   },
   components: {
