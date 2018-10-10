@@ -29,6 +29,14 @@ export default {
             {
               src: require('@/assets/IMG_0001.png'),
               name: 'eeee'
+            },
+            {
+              src: require('@/assets/IMG_0001.png'),
+              name: 'aaaa'
+            },
+            {
+              src: require('@/assets/IMG_0001.png'),
+              name: 'eeee'
             }
           ]
         },

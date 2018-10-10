@@ -121,9 +121,7 @@ export default {
   components: {
     Home
   },
-  watch: {
-    
-  }
+  watch: {}
 }
 </script>
 

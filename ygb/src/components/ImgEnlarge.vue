@@ -5,7 +5,7 @@
       <!-- 遮罩层 -->
       <div class="img-layer" @touchmove.prevent></div>
       <div class="img" @touchmove.prevent>
-        <img :src="imgSrc">
+        <img ref="picture" :src="imgSrc" :style="imgStyle">
       </div>
     </div>
   </transition>
@@ -15,11 +15,25 @@
 export default {
   name: 'img-enlarge',
   props: ['imgSrc'],
+  data () {
+    return {
+      imgStyle: {}
+    }
+  },
   methods: {
     enlargeImg () {
       // 发送事件
       this.$emit('clickImg')
     }
+  },
+  watch: {
+    imgStyle (val) {
+      this.$set(this.imgStyle, 'top', val + 'px')
+    }
+  },
+  mounted () {
+    this.imgStyle.top = (document.body.clientHeight - parseInt(this.$refs.picture.height)) / 2
+    console.log(this.imgStyle.top)
   }
 }
 </script>

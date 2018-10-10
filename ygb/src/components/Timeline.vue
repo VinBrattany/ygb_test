@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img-enlarge v-if="showImg" @clickImg="viewImg" :imgSrc="imgSrc"></img-enlarge>
+    <!-- <img-enlarge v-if="showImg" @clickImg="viewImg" :imgSrc="imgSrc"></img-enlarge> -->
     <div class="vertical-timeline vertical-container">
       <div class="vertical-timeline-block" v-for="(item, index) in listData"
         :key="index">
@@ -17,10 +17,21 @@
             <div class="img-item"
               v-for="(imgItem, imgIndex) in item.imgList"
               :key="imgIndex">
-              <img class="img"
+              <!-- <img v-image-preview="{
+                zIndex: 1000,
+                src: imgItem.src,
+                }"
+                class="img"
+                :src="imgItem.src"
+                :alt="imgItem.name"> -->
+                <img preview
+                class="img"
+                :src="imgItem.src"
+                :alt="imgItem.name">
+                <!-- <img class="img"
                 :src="imgItem.src"
                 :alt="imgItem.name"
-                @click="clickImg($event)">
+                @click="clickImg($event)"> -->
             </div>
           </div>
         </div>
