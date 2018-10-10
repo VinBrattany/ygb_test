@@ -1,0 +1,45 @@
+/* 页面过渡效果 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+/* 清除谷歌浏览器下的 search 叉号 */
+input::-webkit-search-cancel-button {
+  display: none;
+}
+/* 清除IE下的 search 叉号 */
+input[type="search"]::-ms-clear {
+  display: none;
+}
+/* 去掉input disabled 默认半透明样式 */
+input[disabled] {
+  background: none;
+  opacity: 1;
+}
+input, select, textarea {
+  border: none;
+  border-radius: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+body {
+  background-color: #ffffff;
+}
+:focus {
+  outline: 0
+}
+
+/* iconfont symbol引用通用样式 */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

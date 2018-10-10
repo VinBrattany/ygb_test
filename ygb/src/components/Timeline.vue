@@ -5,7 +5,10 @@
       <div class="vertical-timeline-block" v-for="(item, index) in listData"
         :key="index">
         <div class="vertical-timeline-icon">
-            <i class="fa fa-briefcase"></i>
+          <i class="iconfont icon-location"></i>
+          <!-- <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-location"></use>
+          </svg> -->
         </div>
         <div class="vertical-timeline-content">
           <div class="title-text">{{ item.datetime ? item.datetime : '未知' }}</div>
@@ -130,6 +133,29 @@ export default {
         .px2rem(height, 40);
         .px2rem(font-size, 16);
         .px2rem(border-width, 3);
+
+        .icon {
+          display: block;
+          position: relative;
+          left: 50%;
+          top: 50%;
+          .px2rem(width, 24);
+          .px2rem(height, 24);
+          .px2rem(margin-left, -12);
+          .px2rem(margin-top, -12);
+        }
+        i {
+          color: #f1f1f1;
+          display: block;
+          position: relative;
+          left: 50%;
+          top: 50%;
+          .px2rem(width, 24);
+          .px2rem(height, 24);
+          .px2rem(margin-left, -12);
+          .px2rem(margin-top, -14);
+          .px2rem(font-size, 20);
+        }
       }
 
       .vertical-timeline-content {
