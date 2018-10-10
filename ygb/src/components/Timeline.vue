@@ -24,7 +24,7 @@
                 class="img"
                 :src="imgItem.src"
                 :alt="imgItem.name"> -->
-                <img preview
+                <img :preview="index"
                 class="img"
                 :src="imgItem.src"
                 :alt="imgItem.name">
