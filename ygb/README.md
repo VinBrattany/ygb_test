@@ -106,27 +106,20 @@
 
   1. font-class引用（本质上是字体，不支持多色），步骤如下：
 
-    ```bash
     第一步：拷贝项目下面生成的fontclass代码
 
     //at.alicdn.com/t/font_8d5l8fzk5b87iudi.css
-    ```
     
-    ```bash
     第二步：挑选相应图标并获取类名，应用于页面
       
     <i class="iconfont icon-xxx"></i>
-    ```
 
   2. symbol引用（本质上是svg集合，支持多色），步骤如下：
 
-    ```bash
     第一步：拷贝项目下面生成的symbol代码
 
     //at.alicdn.com/t/font_8d5l8fzk5b87iudi.js
-    ```
 
-    ```bash
     第二步：加入通用css代码（引入一次就行）
     
     <style type="text/css">
@@ -137,12 +130,9 @@
         overflow: hidden;
       }
     </style>
-    ```
 
     第三步：挑选相应图标并获取类名，应用于页面
 
-      ```bash
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-xxx"></use>
-      </svg>
-      ```
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-xxx"></use>
+    </svg>
