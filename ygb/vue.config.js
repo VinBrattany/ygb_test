@@ -3,12 +3,14 @@ const argv = require('yargs').argv
 let target = 'http://wmy.tunnel.qydev.com'
 
 if (argv.mock) {
-  target = 'http://wmy.tunnel.qydev.com'
+  target = 'http://localhost:30024'
 }
 const path = require('path')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
+
+const mockdata = require('./mock/ServiceApplicationList.json')
 
 module.exports = {
   // Project deployment base
@@ -117,6 +119,10 @@ module.exports = {
         changeOrigin: true
       }
     }, // string | Object
-    before: app => {}
+    before: app => {
+      app.get('/ygb/api/getServiceApplicationList', (req, res, next) => {
+        res.json(mockdata)
+      })
+    }
   }
 }

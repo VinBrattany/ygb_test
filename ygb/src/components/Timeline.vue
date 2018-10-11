@@ -19,7 +19,8 @@
           <div class="img-container">
             <div class="img-item"
               v-for="(imgItem, imgIndex) in item.imgList"
-              :key="imgIndex">
+              :key="imgIndex"
+              :class="{'no-marginright': (imgIndex+1) % 4 === 0}">
               <!-- <img v-image-preview="{
                 zIndex: 1000,
                 src: imgItem.src,
@@ -201,16 +202,19 @@ export default {
           .img-item {
             position: relative;
             float: left;
-            width: 20%;
-            .px2rem(width, 66);
-            .px2rem(height, 66);
-            .px2rem(padding-right, 10);
-            .px2rem(padding-bottom, 10);
+            // width: 20%;
+            .px2rem(width, 56);
+            .px2rem(height, 56);
+            .px2rem(margin-right, 14.5);
+            .px2rem(margin-bottom, 10);
             .img {
               .px2rem(width, 56);
               .px2rem(height, 56);
               .px2rem(border-radius, 6);
             }
+          }
+          .no-marginright {
+            .px2rem(margin-right, 0);
           }
         }
       }

@@ -6,93 +6,35 @@
 
 <script>
 import Timeline from '@/components/Timeline'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'service-application',
   data () {
     return {
-      listData: [
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds',
-          imgList: [
-            {
-              src: require('@/assets/IMG_0625.png'),
-              name: 'enen'
-            },
-            {
-              src: require('@/assets/IMG_0638.jpg'),
-              name: 'emem'
-            },
-            {
-              src: require('@/assets/IMG_0001.png'),
-              name: 'eeee'
-            },
-            {
-              src: require('@/assets/IMG_0001.png'),
-              name: 'aaaa'
-            },
-            {
-              src: require('@/assets/IMG_0001.png'),
-              name: 'eeee'
-            }
-          ]
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds'
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds',
-          imgList: [
-            {
-              src: require('@/assets/IMG_0625.png'),
-              name: 'enen'
-            },
-            {
-              src: require('@/assets/IMG_0638.jpg'),
-              name: 'emem'
-            }
-          ]
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds'
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds'
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds'
-        },
-        {
-          datetime: '2018-09-11',
-          rearer: 'abc',
-          problemDesc: 'aaa',
-          problemType: 'ds'
-        }
-      ]
+      listData: []
     }
+  },
+  computed: {
+    ...mapGetters({
+      serviceApplicationList: 'getServiceApplicationList'
+    })
+  },
+  mounted () {
+    this.initData()
   },
   methods: {
     loadTop () {
       console.log('loadmore')
       this.$refs.loadmore.onTopLoaded()
+    },
+    initData () {
+      this.$store.dispatch('fetchServiceApplicationList').then(res => {
+        this.listData = this.serviceApplicationList
+        this.$previewRefresh()
+      }).catch(_ => {
+        // console.log(_)
+      })
     }
   },
   components: {

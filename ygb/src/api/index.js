@@ -8,34 +8,29 @@ const post = (url, options, config) => {
   const appid = getUrlParam('appid') || getUrlParam('appId') || getUrlParam('client_id')
   const urlParamStr = (ticket ? '?ticket=' + ticket : '') + (appid ? '&appid=' + appid : '')
 
-  const promise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     axios.post(root + url + urlParamStr, options, config || {}).then(res => {
-      const data = res.data
-      resolve(data)
+      resolve(res.data)
     }).catch(err => {
       reject(err)
     })
   })
-
-  return promise
 }
 
-const get = async (url, param) => {
+const get = async (url, params) => {
   const ticket = getUrlParam('ticket')
   const appid = getUrlParam('appid') || getUrlParam('appId') || getUrlParam('client_id')
   const urlParamStr = (ticket ? '?ticket=' + ticket : '') + (appid ? '&appid=' + appid : '')
 
   return new Promise((resolve, reject) => {
-    axios({
-      method: 'get',
-      url: root + url + urlParamStr,
-      params: param
-    }).then(res => {
+    axios.get(root + url + urlParamStr, { params: params }).then(res => {
       resolve(res.data)
-    }).catch(_ => {
-      reject(_)
+    }).catch(err => {
+      reject(err)
     })
   })
 }
 
-/** ******************************************处方申请**************************************/
+/** ******************************************服务申请**************************************/
+// 获取服务申请列表
+export const getServiceApplicationList = async params => get('/ygb/api/getServiceApplicationList', params)
