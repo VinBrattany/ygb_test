@@ -104,49 +104,45 @@
 
   两种主流引用：
 
-  1. font-class引用：(本质上是字体，不支持多色)
+  1. font-class引用（本质上是字体，不支持多色），步骤如下：
 
-    步骤如下：
+    ```bash
+    第一步：拷贝项目下面生成的fontclass代码
 
-      第一步：拷贝项目下面生成的fontclass代码
-
-        ```bash
-        //at.alicdn.com/t/font_8d5l8fzk5b87iudi.css
-        ```
-
-      第二步：挑选相应图标并获取类名，应用于页面
+    //at.alicdn.com/t/font_8d5l8fzk5b87iudi.css
+    ```
+    
+    ```bash
+    第二步：挑选相应图标并获取类名，应用于页面
       
-        ```bash
-        <i class="iconfont icon-xxx"></i>
-        ```
+    <i class="iconfont icon-xxx"></i>
+    ```
 
-  2. symbol引用：（本质上是svg集合，支持多色）
-  
-    步骤如下：
+  2. symbol引用（本质上是svg集合，支持多色），步骤如下：
 
-      第一步：拷贝项目下面生成的symbol代码
+    ```bash
+    第一步：拷贝项目下面生成的symbol代码
 
-        ```bash
-        //at.alicdn.com/t/font_8d5l8fzk5b87iudi.js
-        ```
+    //at.alicdn.com/t/font_8d5l8fzk5b87iudi.js
+    ```
 
-      第二步：加入通用css代码（引入一次就行）
+    ```bash
+    第二步：加入通用css代码（引入一次就行）
+    
+    <style type="text/css">
+      .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+    </style>
+    ```
 
-        ```bash
-        <style type="text/css">
-          .icon {
-            width: 1em; height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
-          }
-        </style>
-        ```
+    第三步：挑选相应图标并获取类名，应用于页面
 
-      第三步：挑选相应图标并获取类名，应用于页面
-
-        ```bash
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-xxx"></use>
-        </svg>
-        ```
+      ```bash
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-xxx"></use>
+      </svg>
+      ```
