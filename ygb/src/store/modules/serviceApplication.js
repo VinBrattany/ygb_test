@@ -5,7 +5,7 @@ import { getServiceApplicationList } from '@/api/index'
  */
 const state = () => {
   return {
-    serviceApplicationList: {}
+    serviceApplicationList: []
   }
 }
 

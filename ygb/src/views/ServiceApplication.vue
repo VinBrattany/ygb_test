@@ -1,6 +1,6 @@
 <template>
   <mt-loadmore :top-method="loadTop" ref="loadmore">
-    <timeline :listData="listData"></timeline>
+    <timeline :listData="serviceApplicationList"></timeline>
   </mt-loadmore>
 </template>
 
@@ -11,9 +11,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'service-application',
   data () {
-    return {
-      listData: []
-    }
+    return {}
   },
   computed: {
     ...mapGetters({
@@ -25,15 +23,20 @@ export default {
   },
   methods: {
     loadTop () {
-      console.log('loadmore')
-      this.$refs.loadmore.onTopLoaded()
+      this.refreshData()
     },
     initData () {
       this.$store.dispatch('fetchServiceApplicationList').then(res => {
-        this.listData = this.serviceApplicationList
         this.$previewRefresh()
       }).catch(_ => {
         // console.log(_)
+      })
+    },
+    refreshData () {
+      this.$store.dispatch('fetchServiceApplicationList').then(res => {
+        this.$previewRefresh()
+        console.log('refresh')
+        this.$refs.loadmore.onTopLoaded()
       })
     }
   },
