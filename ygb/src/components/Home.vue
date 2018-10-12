@@ -53,7 +53,7 @@ export default {
 
 .wrapper {
   .swipe-wrapper {
-    .px2rem(height, 200);
+    .px2rem(height, 140);
     .swipe-item-1 {
       background-color: blue;
     }
