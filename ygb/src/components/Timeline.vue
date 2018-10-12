@@ -38,6 +38,10 @@
                 @click="clickImg($event)"> -->
             </div>
           </div>
+          <div>
+            <mt-button size="small" class="bt-undo" @click="showDialog">不开处方</mt-button>
+            <mt-button size="small" class="bt-do">开处方</mt-button>
+          </div>
         </div>
       </div>
     </div>
@@ -73,6 +77,11 @@ export default {
     },
     viewImg () {
       this.showImg = false
+    },
+    showDialog () {
+      MessageBox.prompt('请输入姓名').then(({ value, action }) => {
+        
+      });
     }
   }
 }
@@ -215,6 +224,16 @@ export default {
           }
           .no-marginright {
             .px2rem(margin-right, 0);
+          }
+
+          .bt-undo {
+            color: #ffffff;
+            background-color: #87CEFA;
+            .px2rem(margin-right, 14);
+          }
+          .bt-do {
+            color: #ffffff;
+            background-color: #4169E1;
           }
         }
       }
