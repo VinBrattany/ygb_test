@@ -3,7 +3,7 @@
     <div class="grid-item"
       v-for="(item, index) in gridData"
       :key="index"
-      @click="gotoPage(item.path)">
+      @click="gotoPage">
       <div v-if="showIcon" class="grid-icon">
         <img :src="item.imgSrc" :alt="item.name">
       </div>
@@ -34,7 +34,7 @@ export default {
   methods: {
     enlargeImg () {
       // 发送事件
-      this.$emit('clickImg')
+      this.$emit('gotoPage()', path)
     }
   },
   watch: {
